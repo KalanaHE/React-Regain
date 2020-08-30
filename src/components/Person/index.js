@@ -2,6 +2,9 @@ import React from "react";
 import { TextField, Button } from "@material-ui/core";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
+import Typography from "@material-ui/core/Typography";
+
+import Validator from "../Validator";
 
 const Index = (props) => {
   return (
@@ -31,7 +34,11 @@ const Index = (props) => {
             onChange={props.namechange}
             label="Enter your name here"
             variant="outlined"
+            value={props.name}
           />
+          <Typography color="textSecondary" gutterBottom>
+            <Validator textLength={props.name.length} />
+          </Typography>
         </CardContent>
       </Card>
     </div>
