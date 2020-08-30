@@ -2,7 +2,6 @@ import React from "react";
 import { TextField, Button } from "@material-ui/core";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
-import Typography from "@material-ui/core/Typography";
 
 import Validator from "../Validator";
 
@@ -36,9 +35,7 @@ const Index = (props) => {
             variant="outlined"
             value={props.name}
           />
-          <Typography color="textSecondary" gutterBottom>
-            <Validator textLength={props.name.length} />
-          </Typography>
+          <Validator textLength={props.name.length} />
         </CardContent>
       </Card>
     </div>
