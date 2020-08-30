@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import "./App.css";
-import Person from "./components/Person";
+// import Person from "./components/Person";
 import Switch from "@material-ui/core/Switch";
 import Container from "@material-ui/core/Container";
 import Nav from "./components/AppBar";
+import Person from "./screens/Persons";
 
 class App extends Component {
   state = {
@@ -52,23 +53,11 @@ class App extends Component {
             name="checkedA"
             inputProps={{ "aria-label": "secondary checkbox" }}
           />
-
-          {this.state.toggleShow ? (
-            this.state.people.map((person, index) => {
-              return (
-                <Person
-                  key={person.id}
-                  index={person.id}
-                  namechange={(event) =>
-                    this.nameChangeHandler(event, person.id)
-                  }
-                  name={person.name}
-                />
-              );
-            })
-          ) : (
-            <h1>Hidden</h1>
-          )}
+          <Person
+            toggleShow={this.state.toggleShow}
+            people={this.state.people}
+            nameChange={this.nameChangeHandler}
+          />
         </Container>
       </div>
     );
